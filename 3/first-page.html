@@ -1,0 +1,1628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="smoothness/jquery.ui.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <!-- <script type="text/javascript" src="js/demo.js"></script> -->
+</head>
+
+<body>
+    <header class="page_header">
+        <div id="logo">
+            <img src="images/logo.png">
+        </div>
+        <div id="exit">
+            <a href="javascript:;">退出</a>
+        </div>
+    </header>
+    <div id="main">
+        <div id="nav">
+            <ul class="dorplist-left">
+                <li id="dorplist-dept"><a href="javascript:;">部门管理</a>
+                    <ul class="dorplist-dept-op">
+                        <li><a href="javascript:;">显示部门信息</a></li>
+                        <li><a href="javascript:;">查询部门下员工</a></li>
+                    </ul>
+                </li>
+                <li id="dorplist-post"><a href="javascript:;">岗位管理</a>
+                    <ul class="dorplist-post-op">
+                        <li><a href="javascript:;">显示岗位信息</a></li>
+                        <li><a href="javascript:;">查询岗位下员工</a></li>
+                    </ul>
+                </li>
+                <li id="dorplist-entry"><a href="javascript:;">员工管理</a>
+                    <ul class="dorplist-entry-op">
+                        <li class="op-li op-li-first"><a href="javascript:;">员工入职管理</a>
+                        </li>
+                        <li class="op-li op-li-second"><a href="javascript:;">员工异动管理</a>
+                            <ul class="thirdNav thirdNav2">
+                                <li><a href="javascript:;">试用期</a></li>
+                                <li><a href="javascript:;">部门调动</a></li>
+                                <li><a href="javascript:;">岗位调动</a></li>
+                            </ul>
+                      </li>
+                        <li class="op-li op-li-third"><a href="javascript:;">员工信息管理</a>
+                            <ul class="thirdNav thirdNav3">
+                                <li><a href="javascript:;">职业</a></li>
+                                <li><a href="javascript:;">外语</a></li>
+                                <li><a href="javascript:;">家庭成员</a></li>
+                            </ul>
+                        </li>
+                        <li class="op-li op-li-forth"><a href="javascript:;">员工离职管理</a></li>
+                    </ul>
+                </li>
+                <li id="dorplist-report"><a href="javascript:;">报表管理</a></li>
+            </ul>
+        </div>
+        <div id="main-right">
+            <div id="main-dept">
+                <h2>部门信息</h2>
+                <div>
+                    <input class="btn btn-info" type="button" value="新建部门">
+                </div>
+                <table id="main-dept-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>部门编号</td>
+                            <td>部门名称</td>
+                            <td>部门类型</td>
+                            <td>部门电话</td>
+                            <td>部门传真</td>
+                            <td>上级部门编号</td>
+                            <td>成立日期</td>
+                            <td>描述</td>
+                            <td>员工姓名</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <select>
+                                    <option></option>
+                                </select>
+                            </td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td><a href="javascript:;">修改</a>/<a href="javascript:;">删除</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="new-dept">
+                <h2>新建部门</h2>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="deptName" class="col-sm-2 control-label">部门名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="deptName" placeholder="部门名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptType" class="col-sm-2 control-label">部门类型</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptTel" class="col-sm-2 control-label">部门电话</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="deptTel" placeholder="部门电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptFax" class="col-sm-2 control-label">部门传真</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="deptFax" placeholder="部门传真">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptSurNum" class="col-sm-2 control-label">上级部门编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="deptSurNum" placeholder="上级部门编号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptSetDate" class="col-sm-2 control-label">成立日期</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="deptSetDate" placeholder="成立日期">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deptDesc" class="col-sm-2 control-label">描述</label>
+                        <div class="col-sm-10">
+                            <textarea id="deptDesc" class="form-control" rows="3" placeholder="描述"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="Mod-dept-dial">
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>部门名称</td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>部门类型</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option></option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>部门电话</td>
+                                <td>
+                                    <input type="tel" name="" readonly="readonly" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>部门传真</td>
+                                <td>
+                                    <input type="text" name="" readonly="readonly" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>上级部门编号</td>
+                                <td>
+                                    <input type="text" name="" readonly="readonly" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>成立日期</td>
+                                <td>
+                                    <input type="text" name="" readonly="readonly" class="form-control date1" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>描述</td>
+                                <td>
+                                    <textarea class="form-control" rows="3" placeholder="描述"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div id="dept-emp" class="table-responsive">
+                <h2>部门员工</h2>
+                <div id="dept-seacher">
+                    <label>选择查询条件</label>
+                    <select class="form-control">
+                        <option></option>
+                        <option>部门编号</option>
+                        <option>部门名称</option>
+                        <option>部门类型</option>
+                    </select>
+                    <input type="seacher" class="form-control" id="dept-seacher-emp" placeholder="搜索">
+                    <input type="button" class="btn btn-info" id="dept-seacher-emp-btn" value="搜索">
+                </div>
+                <table id="dept-emp-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>部门编号</td>
+                            <td>部门名称</td>
+                            <td>部门类型</td>
+                            <td>部门电话</td>
+                            <td>部门传真</td>
+                            <td>上级部门编号</td>
+                            <td>成立日期</td>
+                            <td>描述</td>
+                            <td>员工姓名</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <select>
+                                    <option></option>
+                                </select>
+                            </td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="new-post">
+                <h2>新建岗位</h2>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="postName" class="col-sm-2 control-label">岗位名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="postName" placeholder="岗位名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postType" class="col-sm-2 control-label">岗位类型</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postStaffing" class="col-sm-2 control-label">岗位编制</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="postStaffing" placeholder="岗位编制">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="main-post" class="table-responsive">
+                <h2>岗位信息</h2>
+                <div>
+                    <input class="btn btn-info" type="button" value="新建岗位">
+                </div>
+                <table id="main-post-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>岗位编号</td>
+                            <td>岗位名称</td>
+                            <td>岗位类型</td>
+                            <td>岗位编制</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <select disabled="true">
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </td>
+                            <td>3</td>
+                            <td>
+                                <a href="javascript:;">修改</a>/<a href="javascript:;">删除</a>
+                                <!-- <input type="button" value="ok" class="xiugaibumen-btn" /> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="Mod-post-dial">
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>岗位名称</td>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>岗位类型</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option></option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>岗位编制</td>
+                                <td>
+                                    <input type="tel" name="" class="form-control" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div id="post-emp" class="table-responsive">
+                <h2>岗位员工</h2>
+                <div id="post-seacher">
+                    <label>选择查询条件</label>
+                    <select class="form-control">
+                        <option></option>
+                        <option>岗位编号</option>
+                        <option>岗位名称</option>
+                        <option>岗位类型</option>
+                    </select>
+                    <input type="seacher" class="form-control" id="post-seacher-emp" placeholder="搜索">
+                    <input type="button" class="btn btn-info" id="dept-seacher-emp-btn" value="搜索">
+                </div>
+                <table id="post-emp-table" class="table  table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>岗位编号</td>
+                            <td>岗位名称</td>
+                            <td>岗位类型</td>
+                            <td>岗位编制</td>
+                            <td>员工姓名</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <select>
+                                    <option></option>
+                                </select>
+                            </td>
+                            <td>3</td>
+                            <td>6</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="report" class="report">
+                <h2>报表管理</h2>
+                <div id="report-tabs">
+                    <ul id="report-leader">
+                        <li><a href="#tabs1">新聘员工报表</a></li>
+                        <li><a href="#tabs2">离职员工报表</a></li>
+                        <li><a href="#tabs3">部门调动员工报表</a></li>
+                        <li><a href="#tabs4">岗位调动员工报表</a></li>
+                        <li id="report-5"><a href="#tabs5">人事月报</a></li>
+                    </ul>
+                                        <div id="tabs1">
+                        <div id="report-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="new-date1"/>
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="new-date2"/>
+                        </span>
+                            <span>
+                        <label for="new-dep">部门：</label>
+                            <select name="new-dep" id="new-dep" class="dep">
+                                    <option selected="selected">全部</option>
+                            </select>
+                        </span>
+                            <input type="button" value="查询" id="new-search" />
+                            <br />
+                        </div>
+                        <table class="new-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>部门名称</td>
+                                <td>岗位名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>入职日期</td>
+                                <td>学历</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs2">
+                        <form id="formtabs2" name="2">
+                            <div id="report-term">
+                                <span>
+                                <label for="date1">开始时间：</label>
+                                <input type="text" name="date1" readonly="readonly" class="text date1" id="leave-date1"/>
+                            </span>
+                                <span>
+                                <label for="date2">结束时间：</label>
+                                <input type="text" name="date2" readonly="readonly" class="text date2" id="leave-date2"/>
+                            </span>
+                                <span>
+                            <label for="leave-dep">部门：</label>
+                                <select name="leave-dep" id="leave-dep" class="dep">
+                                        <option selected="selected">全部</option>
+                                </select>
+                            </span>
+                                <input type="button" value="查询" id="leave-search" />
+                                <br />
+                            </div>
+                            <table class="leave-emp emp">
+                                <tr>
+                                    <td>序号</td>
+                                    <td>部门名称</td>
+                                    <td>岗位名称</td>
+                                    <td>姓名</td>
+                                    <td>性别</td>
+                                    <td>离职日期</td>
+                                    <td>离职原因</td>
+                                </tr>
+                            </table>
+                    </div>
+                    </form>
+                    <div id="tabs3">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="dep-date1"/>
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="dep-date2" />
+                        </span>
+                            <input type="button" value="查询" id="dep-search" />
+                            <br />
+                        </div>
+                        <table class="dep-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>原部门名称</td>
+                                <td>新部门名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>调动日期</td>
+                                <td>调动原因</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs4">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="post-date1" />
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="post-date2"  />
+                        </span>
+                            <input type="button" value="查询" id="post-search" />
+                            <br />
+                        </div>
+                        <table class="post-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>部门名称</td>
+                                <td>原岗位名称</td>
+                                <td>新岗位名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>调动日期</td>
+                                <td>调动原因</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs5">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="emp-year">年份：</label>
+                            <select name="emp-year" id="emp-year"></select>
+                        </span>
+                            <span>
+                            <label for="emp-month">月份：</label>
+                            <select name="emp-month" id="emp-month"></select>
+                        </span>
+                            <input type="button" value="查询" id="emp-search" />
+                            <br />
+                        </div>
+                        <table class="emp-report emp">
+                            <tr>
+                                <td rowspan="2">部门名称</td>
+                                <td colspan="6">人数统计</td>
+                                <td colspan="4">学历统计</td>
+                            </tr>
+                            <tr class="second">
+                                <td>月初人数</td>
+                                <td>月末人数</td>
+                                <td>本月新入职</td>
+                                <td>本月离职</td>
+                                <td>本月调入</td>
+                                <td>本月调出</td>
+                                <td>研究生</td>
+                                <td>本科</td>
+                                <td>大专</td>
+                                <td>高中及高中以下</td>
+                            </tr>
+                        </table>
+                    </div>
+<!--                <div id="tabs1">
+                        <div id="report-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="new-date1"/>
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="new-date2"/>
+                        </span>
+                            <span>
+                        <label for="new-dep">部门：</label>
+                            <select name="new-dep" id="new-dep" class="dep">
+                                    <option selected="selected">全部</option>
+                            </select>
+                        </span>
+                            <input type="button" value="查询" id="new-search" />
+                            <br />
+                        </div>
+                        <table class="new-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>部门名称</td>
+                                <td>岗位名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>入职日期</td>
+                                <td>学历</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs2">
+                        <form id="formtabs2" name="2">
+                            <div id="report-term">
+                                <span>
+                                <label for="date1">开始时间：</label>
+                                <input type="text" name="date1" readonly="readonly" class="text date1" id="leave-date1"/>
+                            </span>
+                                <span>
+                                <label for="date2">结束时间：</label>
+                                <input type="text" name="date2" readonly="readonly" class="text date2" id="leave-date2"/>
+                            </span>
+                                <span>
+                            <label for="leave-dep">部门：</label>
+                                <select name="leave-dep" id="leave-dep" class="dep">
+                                        <option selected="selected">全部</option>
+                                </select>
+                            </span>
+                                <input type="button" value="查询" id="leave-search" />
+                                <br />
+                            </div>
+                            <table class="leave-emp emp">
+                                <tr>
+                                    <td>序号</td>
+                                    <td>部门名称</td>
+                                    <td>岗位名称</td>
+                                    <td>姓名</td>
+                                    <td>性别</td>
+                                    <td>离职日期</td>
+                                    <td>离职原因</td>
+                                </tr>
+                            </table>
+                    </div>
+                    </form>
+                    <div id="tabs3">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="dep-date1"/>
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="dep-date2" />
+                        </span>
+                            <input type="button" value="查询" id="dep-search" />
+                            <br />
+                        </div>
+                        <table class="dep-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>原部门名称</td>
+                                <td>新部门名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>调动日期</td>
+                                <td>调动原因</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs4">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="date1">开始时间：</label>
+                            <input type="text" name="date1" readonly="readonly" class="text date1" id="post-date1" />
+                        </span>
+                            <span>
+                            <label for="date2">结束时间：</label>
+                            <input type="text" name="date2" readonly="readonly" class="text date2" id="post-date2"  />
+                        </span>
+                            <input type="button" value="查询" id="post-search" />
+                            <br />
+                        </div>
+                        <table class="post-emp emp">
+                            <tr>
+                                <td>序号</td>
+                                <td>部门名称</td>
+                                <td>原岗位名称</td>
+                                <td>新岗位名称</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>调动日期</td>
+                                <td>调动原因</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs5">
+                        <div id="report-term" class="change-term">
+                            <span>
+                            <label for="emp-year">年份：</label>
+                            <select name="emp-year" id="emp-year"></select>
+                        </span>
+                            <span>
+                            <label for="emp-month">月份：</label>
+                            <select name="emp-month" id="emp-month"></select>
+                        </span>
+                            <input type="button" value="查询" id="emp-search" />
+                            <br />
+                        </div>
+                        <table class="emp-report  emp">
+                            <tr>
+                                <td rowspan="2">部门名称</td>
+                                <td colspan="6">人数统计</td>
+                                <td colspan="4">学历统计</td>
+                            </tr>
+                            <tr>
+                                <td>月初人数</td>
+                                <td>月末人数</td>
+                                <td>本月新入职</td>
+                                <td>本月离职</td>
+                                <td>本月调入</td>
+                                <td>本月调出</td>
+                                <td>研究生</td>
+                                <td>本科</td>
+                                <td>大专</td>
+                                <td>高中及高中以下</td>
+                            </tr>
+                        </table>
+                    </div> -->
+                </div>
+            </div>
+            <div class="ruzhi-xinxi-jibenxinxi-select">
+                <form>
+                    <h3 class="ruzhi-h3">员工基本信息</h3>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="active">
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="">
+                                <td>姓名</td>
+                                <td>
+                                    <input class="btn-info" type="text" value="" name="" />
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>性别</td>
+                                <td>
+                                    <select class="">
+                                        <option name="sex" value="nan">男</option>
+                                        <option name="sex" value="nv">女</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>出生日期</td>
+                                <td>
+                                    <input type="date" name="" readonly="readonly" class="text date1" id="new-date01" />
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>身份证号</td>
+                                <td>
+                                    <input type="text" value="" name="" />
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>部门</td>
+                                <td>
+                                    <select>
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                    </select>
+                                    <input type="button" value="新建部门" class="build-dept" />
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>岗位</td>
+                                <td>
+                                    <select>
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                    </select>
+                                    <input type="button" value="新建岗位" class="build-post" />
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>入职日期</td>
+                                <td>
+                                    <input type="date" name="" readonly="readonly" class="text date1" id="new-date02" /> </td>
+                            </tr>
+                            <tr class="">
+                                <td>参加工作日期</td>
+                                <td>
+                                    <input type="date" name="" readonly="readonly" class="text date1" id="new-date03" /> </td>
+                            </tr>
+                            <tr>
+                                <td>用工形式</td>
+                                <td>
+                                    <select>
+                                        <option name="type" value="official">正式</option>
+                                        <option name="type" value="temporary">临时</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>人员来源</td>
+                                <td>
+                                    <select>
+                                        <option name="source" value="school">校园招聘</option>
+                                        <option name="source" value="social">社会招聘</option>
+                                        <option name="source" value="else">其他</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>是否有试用期？</td>
+                                <td>
+                                    是
+                                    <input type="radio" value="是" name="probation" class="basic-message-probation" /> 否
+                                    <input type="radio" value="否" name="probation" class="basic-message-probation" />
+                                </td>
+                            </tr>
+                            <tr class="probation-box">
+                                <td>
+                                    试用期开始时间：
+                                    <input type="date" name="" readonly="readonly" class="text date1" id="new-date4" />
+                                </td>
+                                <td>
+                                    试用期截止时间：
+                                    <input type="date" name="" readonly="readonly" class="text date2" id="new-date5" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="提交" />
+                    <input type="reset" value="重置" />
+                </form>
+            </div>
+            <div class="ruzhi-xinxi-qitaxinxi-select">
+                <form>
+                    <h3 class="ruzhi-h3">员工其他信息</h3>
+                    <h3>职业生涯信息</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>起始年月</td>
+                                <td>
+                                    <input type="text" name="date1" readonly="readonly" class="text date1" /> </td>
+                                <td>截至年月</td>
+                                <td>
+                                    <input type="text" name="date2" readonly="readonly" class="text date2" /> </td>
+                            </tr>
+                            <!--     <tr>
+                            
+                        </tr> -->
+                            <!-- <tr>
+                                                              <td>离职去向</td>
+                                                              <td><input type="text" value="日期" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>是否进入人才库</td>
+                                                              <td><input type="radio" name="ren-cai-ku" value="是" /></td>
+                                                              <td><input type="radio" name="ren-cai-ku" value="否" /></td>
+                                                            </tr> -->
+                        </tbody>
+                    </table>
+                    <h3>外语能力</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>外语语种</td>
+                                <td>
+                                    <select>
+                                        <option name="make-sure" value="">英</option>
+                                        <option name="make-sure" value="">法</option>
+                                        <option name="make-sure" value="">日</option>
+                                        <option name="make-sure" value="">德</option>
+                                    </select>
+                                </td>
+                                <td>外国语中熟练程度</td>
+                                <td>
+                                    <select>
+                                        <option name="make-sure" value="">0</option>
+                                        <option name="make-sure" value="">1</option>
+                                        <option name="make-sure" value="">2</option>
+                                        <option name="make-sure" value="">3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <!--    <tr>
+                             <td>外国语中熟练程度</td>
+                             <td>
+                                 <select>
+                                     <option name="make-sure" value="">0</option>
+                                     <option name="make-sure" value="">1</option>
+                                     <option name="make-sure" value="">2</option>
+                                     <option name="make-sure" value="">3</option>
+                                 </select>
+                             </td>
+                         </tr> -->
+                        </tbody>
+                    </table>
+                    <h3>家庭成员与社会关系信息</h3>
+                    <table class="table table-hover">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>与本人关系</td>
+                                <td>
+                                    <input type="text" />
+                                </td>
+                                <td>姓名</td>
+                                <td>
+                                    <input type="text" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="提交" />
+                    <input type="reset" value="重置" />
+                </form>
+            </div>
+            <div class="ruzhi-yidong-shiyongqi-select">
+                <h3 class="ruzhi-h3">试用期员工管理</h3>
+                <div id="shiyongqi-tabs">
+                    <ul>
+                        <li><a href="#shiyongqi-tabs1">tab1</a></li>
+                        <li><a href="#shiyongqi-tabs2">tab2</a></li>
+                    </ul>
+                    <div id="shiyongqi-tabs1">
+                        <form>
+                            <table class="table table-hover">
+                                <thead>查询试用期员工
+                                    <input class="btn btn-primary probation-emp-search-btn" type="button" value="查询" name="" />
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>员工编号</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>员工姓名</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>试用期开始日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date1" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>部门名称</td>
+                                        <td>
+                                            <select>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </td>
+                                        <td>岗位名称</td>
+                                        <td>
+                                            <select>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </td>
+                                        <td>试用期结束日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date2" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>试用期状态</td>
+                                        <td>
+                                            <select>
+                                                <option>正常</option>
+                                                <option>延期</option>
+                                                <option>不录用</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-hover probation-emp-search-list">
+                              
+                                    <tr>
+                                        <td>员工编号</td>
+                                        <td>员工姓名</td>
+                                        <td>部门名称</td>
+                                        <td>岗位名称</td>
+                                        <td>试用期状态</td>
+                                        <td>试用期开始时间</td>
+                                        <td>试用期结束时间</td>
+                                        <td>操作</td>
+                                    </tr>
+                            
+                             <!-- 
+                                   <tr>
+                                       <td>001</td>
+                                       <td>wang</td>
+                                       <td>财务部</td>
+                                       <td>财务sdf总监</td>
+                                       <td>正常</td>
+                                       <td>2016-3-30</td>
+                                       <td>2016-6-30</td>
+                                       <td>
+                                           <input type="button" value="编辑" class="ruzhi-yidong-shiyongqi-select-edit-btn" />
+                                       </td>
+                                   </tr> -->
+                               
+                            </table>
+                        </form>
+                    </div>
+                    <div id="shiyongqi-tabs2">
+                        <!-- 已转正员工信息查询：查询条件：开始日期，结束日期，部门编号，部门名称，员工编号，员工姓名 -->
+                        <form>
+                            <table>
+                                <thead>查询已转正员工信息
+                                    <input type="button" class="btn btn-primary probation-official-emp-search-btn" value="查询" />
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>开始日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date1" />
+                                        </td>
+                                        <td>结束日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date2" />
+                                        </td>
+                                        <td>部门编号</td>
+                                        <td>
+                                            <select>
+                                                <option>45</option>
+                                                <option>12</option>
+                                                <option>12</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>部门名称</td>
+                                        <td>
+                                            <select>
+                                                <option>45</option>
+                                                <option>12</option>
+                                                <option>12</option>
+                                            </select>
+                                        </td>
+                                        <td>员工编号</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>员工姓名</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <table class="table table-hover probation-official-emp-search-list">
+                            <tr>
+                                <td>员工编号</td>
+                                <td>员工姓名</td>
+                                <td>部门编号</td>
+                                <td>部门姓名</td>
+                                <td>开始日期</td>
+                                <td>结束日期</td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ruzhi-yidong-shiyongqi">
+                <form>
+                <div class="wwwwwww"></div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>试用期部门考核评语</td>
+                                <td>
+                                    <textarea cols="20" cols="30"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>考核结果</td>
+                                <td>
+                                    <select class="shiyongqi-status">
+                                        <option name="make-sure" value="">转正</option>
+                                        <option name="make-sure" value="">延期</option>
+                                        <option name="make-sure" value="">不予录用</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="delay-time-box">
+                                <td>延期至</td>
+                                <td>
+                                    <input type="text" name="" readonly="readonly" class="text date1" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>处理日期</td>
+                                <td>
+                                    <input type="text" name="" readonly="readonly" class="text date1" id="new-date002" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="ruzhi-yidong-bumen-select">
+                <!-- 1、员工列表查询：查询条件为部门编号，部门名称，员工编号，员工姓名。2、已调动部门员工信息查询：查询条件为指定开始日期，结束日期，员工编号，员工姓名，调动方式。 -->
+                <h3 class="ruzhi-h3">部门调动员工管理</h3>
+                <div id="dept-change-tabs">
+                    <ul>
+                        <li><a href="#dept-change-tabs1">tab1</a></li>
+                        <li><a href="#dept-change-tabs2">tab2</a></li>
+                    </ul>
+                    <div id="dept-change-tabs1">
+                        <form>
+                            <table>
+                                <thead>查询调部门动员工</thead>
+                            </table>
+                            <tbody>
+                                <tr>
+                                    <td>员工编号</td>
+                                    <td>
+                                        <input type="text" name="" value="" />
+                                    </td>
+                                    <td>员工姓名</td>
+                                    <td>
+                                        <input type="text" name="" value="" />
+                                    </td>
+                                    <td>部门编号</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                    <td>部门名称</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <input class="btn btn-primary" type="button" value="查询" name="" />
+                        </form>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td>员工编号</td>
+                                    <td>员工姓名</td>
+                                    <td>部门名称</td>
+                                    <td>调动时间</td>
+                                    <td>调动方式</td>
+                                    <td>操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>001</td>
+                                <td>wang</td>
+                                <td>人力部</td>
+                                <td>2016-3-30</td>
+                                <td> 主动</td>
+                                <td>
+                                    <input type="button" value="编辑" class="ruzhi-yidong-bumen-select-edit-btn" />
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="dept-change-tabs2">
+                        <form>
+                            <table>
+                                <thead>查询已调动部门员工信息
+                                    <input type="button" class="btn btn-primary" value="查询" />
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>员工编号</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>员工姓名</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>调动方式</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>开始日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date1" />
+                                        </td>
+                                        <td>结束日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date2" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <table class="table table-hover">
+                            <tr>
+                                <td>员工编号</td>
+                                <td>员工姓名</td>
+                               
+                                <td>调动方式</td>
+                                <td>开始日期</td>
+                                <td>结束日期</td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ruzhi-yidong-bumen">
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>调转后的部门</td>
+                                <td>
+                                    <textarea cols="20" cols="30"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>调转类型</td>
+                                <td>
+                                    <select>
+                                        <option name="make-sure" value="">主动调动</option>
+                                        <option name="make-sure" value="">被动调动</option>
+                                        <option name="make-sure" value="">数据错误</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>调转原因</td>
+                                <td>
+                                    <input type="text" value="日期" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>调动日期</td>
+                                <td>
+                                    <input type="text" value="日期" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <label>已调转部门人员查询</label>
+                <select>
+                    <option>开始日期</option>
+                    <option>结束日期</option>
+                    <option>员工编号</option>
+                    <option>员工姓名</option>
+                    <option>调动方式</option>
+                </select>
+            </div>
+            <div class="ruzhi-yidong-gangwei-select">
+                <!-- 1、查询员工列表：查询条件：部门编号，部门名称，员工名称。2、已调动岗位员工信息查询：查询条件为开始日期，结束日期，，员工编号，员工姓名，调动方式。 -->
+                <h3 class="ruzhi-h3">岗位调动员工管理</h3>
+                <div id="post-change-tabs">
+                    <ul>
+                        <li><a href="#post-change-tabs1">tab1</a></li>
+                        <li><a href="#post-change-tabs2">tab2</a></li>
+                    </ul>
+                    <div id="post-change-tabs1">
+                        <form>
+                            <table>
+                                <thead>查询岗位调动员工</thead>
+                            </table>
+                            <tbody>
+                                <tr>
+                                    <!--   <td>员工编号</td>
+                                  <td>
+                                      <input type="text" name="" value="" />
+                                  </td> -->
+                                    <td>员工姓名</td>
+                                    <td>
+                                        <input type="text" name="" value="" />
+                                    </td>
+                                    <td>部门编号</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                    <td>部门名称</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <input class="btn btn-primary" type="button" value="查询" name="" />
+                        </form>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td>员工编号</td>
+                                    <td>员工姓名</td>
+                                    <td>岗位名称</td>
+                                    <td>调动时间</td>
+                                    <td>调动方式</td>
+                                    <td>操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>001</td>
+                                <td>wang</td>
+                                <td>hr</td>
+                                <td>2016-3-30</td>
+                                <td> 主动</td>
+                                <td>
+                                    <input type="button" value="编辑" class="ruzhi-yidong-gangwei-select-edit-btn" />
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="post-change-tabs2">
+                        <form>
+                            <table>
+                                <thead>查询已调动岗位员工信息
+                                    <input type="button" class="btn btn-primary" value="查询" />
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>员工编号</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>员工姓名</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>调动方式</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>开始日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date1" />
+                                        </td>
+                                        <td>结束日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date2" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <table class="table table-hover">
+                            <tr>
+                                <td>员工编号</td>
+                                <td>员工姓名</td>
+                            
+                                <td>调动方式</td>
+                                <td>开始日期</td>
+                                <td>结束日期</td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ruzhi-yidong-gangwei">
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>调转后的岗位</td>
+                                <td>
+                                    <textarea cols="20" cols="30"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>调转类型</td>
+                                <td>
+                                    <select>
+                                        <option name="make-sure" value="">升职</option>
+                                        <option name="make-sure" value="">降职</option>
+                                        <option name="make-sure" value="">数据录入错误</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>备注</td>
+                                <td>
+                                    <input type="text" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>调动日期</td>
+                                <td>
+                                    <input type="text" value="日期" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <label>已调转岗位人员查询</label>
+                <select>
+                    <option>开始日期</option>
+                    <option>结束日期</option>
+                    <option>员工编号</option>
+                    <option>员工姓名</option>
+                    <option>调动方式</option>
+                </select>
+            </div>
+            <div class="ruzhi-lizhi-select">
+                <!-- 1、员工列表查询：查询条件为部门编号，部门名称，员工编号，员工姓名2、已离职员工信息查询：查询条件包括：员工编号，姓名，部门名称，岗位名称，离职类型，查询开始日期，结束日期 -->
+                <h3 class="ruzhi-h3">离职员工管理</h3>
+                <div id="lizhi-manage-tabs">
+                    <ul>
+                        <li><a href="#lizhi-manage-tabs1">tab1</a></li>
+                        <li><a href="#lizhi-manage-tabs2">tab2</a></li>
+                    </ul>
+                    <div id="lizhi-manage-tabs1">
+                        <form>
+                            <table>
+                                <thead>离职员工管理</thead>
+                            </table>
+                            <tbody>
+                                <tr>
+                                    <td>员工编号</td>
+                                    <td>
+                                        <input type="text" name="" value="" />
+                                    </td>
+                                    <td>员工姓名</td>
+                                    <td>
+                                        <input type="text" name="" value="" />
+                                    </td>
+                                    <td>部门编号</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                    <td>部门名称</td>
+                                    <td>
+                                        <select>
+                                            <option>11</option>
+                                            <option>11</option>
+                                            <option>11</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <input class="btn btn-primary" type="button" value="查询" name="" />
+                        </form>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td>员工编号</td>
+                                    <td>员工姓名</td>
+                                    <td>部门名称</td>
+                                    <td>岗位名称</td>
+                                    <td>离职时间</td>
+                                    <td>离职类型</td>
+                                    <td>操作</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>001</td>
+                                <td>wang</td>
+                                <td>人力部</td>
+                                <td>hr</td>
+                                <td>2016-3-30</td>
+                                <td> 主动</td>
+                                <td>
+                                    <input type="button" value="编辑" class="ruzhi-lizhi-select-edit-btn" />
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="lizhi-manage-tabs2">
+                        <!--    已离职员工信息查询：查询条件包括：员工编号，姓名，部门名称，岗位名称，离职类型，查询开始日期，结束日期 -->
+                        <form>
+                            <table>
+                                <thead>查询已离职员工信息
+                                    
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>员工编号</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>员工姓名</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>离职类型</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>部门名称</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+                                        <td>岗位名称</td>
+                                        <td>
+                                            <input type="text" name="" value="" />
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>开始日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date1" />
+                                        </td>
+                                        <td>结束日期</td>
+                                        <td>
+                                            <input type="text" name="" readonly="readonly" class="text date2" />
+                                        </td>
+                                        <td></td>
+                                        <td><input type="button" class="btn btn-primary" value="查询" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <table class="table table-hover">
+                            <tr>
+                                <td>员工编号</td>
+                                <td>员工姓名</td>
+                                <td>岗位名称</td>
+                                <td>部门名称</td>
+                                <td>离职类型</td>
+                                <td>开始日期</td>
+                                <td>结束日期</td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ruzhi-lizhi">
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>描述</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>离职日期</td>
+                                <td>
+                                    <input value="date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>离职类型</td>
+                                <td>
+                                    <select>
+                                        <option name="make-sure" value="">主动辞退</option>
+                                        <option name="make-sure" value="">辞退</option>
+                                        <option name="make-sure" value="">退休</option>
+                                        <option name="make-sure" value="">开除</option>
+                                        <option name="make-sure" value="">试用期未通过</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>离职去向</td>
+                                <td>
+                                    <input type="text" value="日期" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>是否进入人才库</td>
+                                <td>
+                                    <input type="radio" name="ren-cai-ku" value="是" />
+                                </td>
+                                <td>
+                                    <input type="radio" name="ren-cai-ku" value="否" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/deptManage.js"></script>
+    <script type="text/javascript" src="js/postManage.js"></script>
+    <script type="text/javascript" src="js/empManage.js"></script>
+    <script type="text/javascript" src="js/report.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
+</body>
+
+</html>

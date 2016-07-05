@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>报表选项卡</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="1.js"></script>
+<link rel="stylesheet" href="smoothness/jquery.ui.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="1.css" /> 
+</head>
+<body>
+<div id="header">header</div>
+<div id="main">
+	<div id="main-left">
+	</div>
+	<div id="main-right">
+		<div id="report" class="report">
+			<h2 style="text-align:center">报表管理</h2>	
+			<div id="report-tabs">
+				<ul>
+					<li><a href="#tabs1">新聘员工报表</a></li>
+					<li><a href="#tabs2">离职员工报表</a></li>
+					<li><a href="#tabs3">部门调动员工报表</a></li>
+					<li><a href="#tabs4">岗位调动员工报表</a></li>
+					<li id="report-5"><a href="#tabs5">人事月报</a></li>
+				</ul>
+
+				<div id="tabs1">
+					<form id="formtabs1" name="1">
+						<div id="report-term">
+							<span>
+								<label for="date1">开始时间：</label>
+								<input type="text" name="date1" readonly="readonly" class="text date1" id="new-date1"/>
+							</span>
+
+							<span>
+								<label for="date2">结束时间：</label>
+								<input type="text" name="date2" readonly="readonly" class="text date2" id="new-date2"/>
+							</span>
+
+							<span>
+							<label for="new-dep">部门：</label>
+								<select name="new-dep" id="new-dep" class="dep">
+										<option selected="selected">全部</option>
+								</select>
+							</span>
+
+							<input type="button" value="查询" id="new-search" /><br />
+						</div>
+					</form>
+
+					<table id="emp" class="new-emp">
+						<tr><td>序号</td><td>部门名称</td><td>岗位名称</td><td>姓名</td><td>性别</td><td>入职日期</td><td>学历</td></tr>
+					</table>  
+				</div>
+
+				<div id="tabs2">
+					<form id="formtabs2" name="2">
+						<div id="report-term">
+							<span>
+								<label for="date1">开始时间：</label>
+								<input type="text" name="date1" readonly="readonly" class="text date1" id="leave-date1"/>
+							</span>
+
+							<span>
+								<label for="date2">结束时间：</label>
+								<input type="text" name="date2" readonly="readonly" class="text date2" id="leave-date2"/>
+							</span>
+
+							<span>
+							<label for="leave-dep">部门：</label>
+								<select name="leave-dep" id="leave-dep" class="dep">
+										<option selected="selected">全部</option>
+								</select>
+							</span>
+
+							<input type="button" value="查询" id="leave-search" /><br />
+						</div>
+					</form>	
+
+					<table id="emp" class="leave-emp">
+						<tr><td>序号</td><td>部门名称</td><td>岗位名称</td><td>姓名</td><td>性别</td><td>离职日期</td><td>离职原因</td></tr>
+					</table>  
+				</div>
+
+				<div id="tabs3">
+					<form id="formtabs3" name="3">
+						<div id="report-term" class="change-term">
+							<span>
+								<label for="date1">开始时间：</label>
+								<input type="text" name="date1" readonly="readonly" class="text date1" id="dep-date1"/>
+							</span>
+
+							<span>
+								<label for="date2">结束时间：</label>
+								<input type="text" name="date2" readonly="readonly" class="text date2" id="dep-date2" />
+							</span>
+
+							<input type="button" value="查询" id="dep-search" /><br />
+						</div>
+					</form>
+
+					<table id="emp" class="dep-emp">
+						<tr><td>序号</td><td>原部门名称</td><td>新部门名称</td><td>姓名</td><td>性别</td><td>调动日期</td><td>调动原因</td></tr>
+					</table>  
+				</div>
+
+				<div id="tabs4">
+					<form id="formtabs4" name="4">
+						<div id="report-term" class="change-term">
+							<span>
+								<label for="date1">开始时间：</label>
+								<input type="text" name="date1" readonly="readonly" class="text date1" id="post-date1" />
+							</span>
+
+							<span>
+								<label for="date2">结束时间：</label>
+								<input type="text" name="date2" readonly="readonly" class="text date2" id="post-date2"  />
+							</span>
+
+							<input type="button" value="查询" id="post-search" /><br />
+						</div>
+					</form>
+
+					<table id="emp" class="post-emp">
+						<tr><td>序号</td><td>部门名称</td><td>原岗位名称</td><td>新岗位名称</td><td>姓名</td><td>性别</td><td>调动日期</td><td>调动原因</td></tr>
+					</table>  
+				</div>
+
+				<div id="tabs5">
+					<form id="formtabs5" name="5">
+						<div id="report-term" class="change-term">
+							<span>
+								<label for="emp-year">年份：</label>
+								<select name="emp-year" id="emp-year"></select>
+							</span>
+
+							<span>
+								<label for="emp-month">月份：</label>
+								<select name="emp-month" id="emp-month"></select>
+							</span>
+
+							<input type="button" value="查询" id="emp-search" /><br />
+						</div>
+					</form>
+
+					<table id="emp" class="emp-report">
+						<tr><td rowspan="2">部门名称</td>
+							<td colspan="6">人数统计</td>
+							<td colspan="4">学历统计</td>
+						</tr>		
+						<tr class="second">
+							<td>月初人数</td>
+							<td>月末人数</td>
+							<td>本月新入职</td>
+							<td>本月离职</td>
+							<td>本月调入</td>
+							<td>本月调出</td>
+							<td>研究生</td>
+							<td>本科</td>
+							<td>大专</td>
+							<td>高中及高中以下</td>
+						</tr>
+					</table>  
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
